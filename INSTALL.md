@@ -34,7 +34,7 @@ pip install opendr
 
 # Install METRO
 cd $INSTALL_DIR
-git clone --recursive git@github.com:kevinlin311tw/METRO.git
+git clone --recursive git@github.com:microsoft/METRO.git
 cd METRO
 python setup.py build develop
 
