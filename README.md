@@ -1,33 +1,81 @@
-# Project
+# METRO 🚇✨  
+This is an official Pytorch implementation of a paper   
+**End-to-End Human Pose and Mesh Reconstruction with Transformers**  
+[Kevin Lin](https://www.microsoft.com/en-us/research/people/keli), [Lijuan Wang](https://www.microsoft.com/en-us/research/people/lijuanw/), [Zicheng Liu](https://www.microsoft.com/en-us/research/people/zliu/)  
+CVPR 2021  
+[[Paper](https://arxiv.org/abs/2012.09760)] 
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+ <img src="docs/metro-overview.png" width="650"> 
 
-As the maintainer of this project, please make a few updates:
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+ <img src="docs/example_keli.gif" width="200"> <img src="docs/example_lijuanw.gif" width="200"> <img src="docs/example_zliu.gif" width="200"> 
 
-## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+## Citations
+If you find our work useful for your research, please consider citing:
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+```bibtex
+@inproceedings{lin2021end-to-end,
+author = {Lin, Kevin and Wang, Lijuan and Liu, Zicheng},
+title = {End-to-End Human Pose and Mesh Reconstruction with Transformers},
+booktitle = {CVPR},
+year = {2021},
+}
+```
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+## Installation
+Check [INSTALL.md](INSTALL.md) for installation instructions.
 
-## Trademarks
+## Model Zoo and Download
+Please download our pre-trained models and other relevant files that are important to run our code. 
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+Check [DOWNLOAD.md](DOWNLOAD.md) for details. 
+
+
+## Quick demo
+We provide demo codes to run end-to-end inference on the test images.
+
+Check [DEMO.md](DEMO.md) for details.
+
+
+## Experiments
+We provide python codes for training and evaluation.
+
+Check [EXP.md](EXP.md) for details.
+
+
+## License
+
+Our research code is released under the MIT license. See [LICENSE](LICENSE) for details. 
+
+We use submodules from third parties, such as [huggingface/transformers](https://github.com/huggingface/transformers) and [hassony2/manopth](https://github.com/hassony2/manopth). Please see [NOTICE](NOTICE.md) for details. 
+
+We note that any use of SMPL models and MANO models are subject to **Software Copyright License for non-commercial scientific research purposes**. See [SMPL-Model License](https://smpl.is.tue.mpg.de/modellicense) and [MANO License](https://mano.is.tue.mpg.de/license) for details.
+
+
+## Contributing 
+
+We welcome contributions and suggestions. Please check [CONTRIBUTE](CONTRIBUTE.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details. 
+
+
+## Acknowledgments
+
+Our implementation and experiments are built on top of open-source GitHub repositories. We thank all the authors who made their code public, which tremendously accelerates our project progress. If you find these works helpful, please consider citing them as well.
+
+[huggingface/transformers](https://github.com/huggingface/transformers) 
+
+[HRNet/HRNet-Image-Classification](https://github.com/HRNet/HRNet-Image-Classification) 
+
+[nkolot/GraphCMR](https://github.com/nkolot/GraphCMR) 
+
+[akanazawa/hmr](https://github.com/akanazawa/hmr) 
+
+[MandyMo/pytorch_HMR](https://github.com/MandyMo/pytorch_HMR) 
+
+[hassony2/manopth](https://github.com/hassony2/manopth) 
+
+[hongsukchoi/Pose2Mesh_RELEASE](https://github.com/hongsukchoi/Pose2Mesh_RELEASE) 
+
+[mks0601/I2L-MeshNet_RELEASE](https://github.com/mks0601/I2L-MeshNet_RELEASE) 
+
+[open-mmlab/mmdetection](https://github.com/open-mmlab/mmdetection) 

@@ -1,0 +1,6 @@
+[submodule "transformers"]
+	path = transformers
+	url = https://github.com/huggingface/transformers
+[submodule "manopth"]
+	path = manopth
+	url = https://github.com/hassony2/manopth
