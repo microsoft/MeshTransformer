@@ -1,0 +1,11 @@
+yacs
+cython
+matplotlib
+opencv-python
+tqdm
+nltk
+numpy
+scikit-image
+chumpy
+boto3
+requests

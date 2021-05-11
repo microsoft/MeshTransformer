@@ -52,5 +52,5 @@ unset INSTALL_DIR
 
 
 ### Next step
-Please visit [DOWNLOAD.md](DOWNLOAD.md) for downloading important files and data. 
+Please visit [DOWNLOAD.md](docs/DOWNLOAD.md) for downloading important files and data. 
 

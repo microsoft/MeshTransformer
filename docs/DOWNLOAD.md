@@ -85,7 +85,7 @@ ${ROOT}
 ```
 
 ### Next step
-After downloading all the models above, please check [DEMO.md](DEMO.md) for quick demo.
+After downloading all the models above, please check [DEMO.md](docs/DEMO.md) for quick demo.
 
 ## Download training and evaluation datasets
 We provide the pre-parsed data and pseudo ground truth labels, which are provided by open-source project [Pose2Mesh](https://github.com/hongsukchoi/Pose2Mesh_RELEASE). Annotations are stored in TSV (Tab-Separated-Values) format. We suggest the readers to download the image files from the offical dataset websites.
@@ -167,6 +167,6 @@ ${ROOT}
 
 ```
 ### Next step
-After downloading all the datasets above, please check [EXP.md](EXP.md) for scripts to run training and evaluation.
+After downloading all the datasets above, please check [EXP.md](docs/EXP.md) for scripts to run training and evaluation.
 
 

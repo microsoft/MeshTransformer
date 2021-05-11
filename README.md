@@ -1,9 +1,8 @@
-# METRO 🚇✨  
-This is an official Pytorch implementation of a paper   
-**End-to-End Human Pose and Mesh Reconstruction with Transformers**  
-[Kevin Lin](https://www.microsoft.com/en-us/research/people/keli), [Lijuan Wang](https://www.microsoft.com/en-us/research/people/lijuanw/), [Zicheng Liu](https://www.microsoft.com/en-us/research/people/zliu/)  
-CVPR 2021  
-[[Paper](https://arxiv.org/abs/2012.09760)] 
+# MeshTransformer ✨
+
+This is an official PyTroch implementation of [End-to-End Human Pose and Mesh Reconstruction with Transformers](https://arxiv.org/abs/2012.09760). 
+
+MEsh TRansfOrmer (METRO) is a simple yet effective transformer framework that achieves strong results on human mesh reconstruction and hand mesh reconstruction. In this repository, we provide PyTorch code for training and testing our proposed method. 
 
  <img src="docs/metro-overview.png" width="650"> 
 
@@ -11,37 +10,25 @@ CVPR 2021
  <img src="docs/example_keli.gif" width="200"> <img src="docs/example_lijuanw.gif" width="200"> <img src="docs/example_zliu.gif" width="200"> 
 
 
-## Citations
-If you find our work useful for your research, please consider citing:
-
-```bibtex
-@inproceedings{lin2021end-to-end,
-author = {Lin, Kevin and Wang, Lijuan and Liu, Zicheng},
-title = {End-to-End Human Pose and Mesh Reconstruction with Transformers},
-booktitle = {CVPR},
-year = {2021},
-}
-```
-
 ## Installation
-Check [INSTALL.md](INSTALL.md) for installation instructions.
+Check [INSTALL.md](docs/INSTALL.md) for installation instructions.
 
 ## Model Zoo and Download
 Please download our pre-trained models and other relevant files that are important to run our code. 
 
-Check [DOWNLOAD.md](DOWNLOAD.md) for details. 
+Check [DOWNLOAD.md](docs/DOWNLOAD.md) for details. 
 
 
 ## Quick demo
 We provide demo codes to run end-to-end inference on the test images.
 
-Check [DEMO.md](DEMO.md) for details.
+Check [DEMO.md](docs/DEMO.md) for details.
 
 
 ## Experiments
 We provide python codes for training and evaluation.
 
-Check [EXP.md](EXP.md) for details.
+Check [EXP.md](docs/EXP.md) for details.
 
 
 ## License
@@ -55,7 +42,21 @@ We note that any use of SMPL models and MANO models are subject to **Software Co
 
 ## Contributing 
 
-We welcome contributions and suggestions. Please check [CONTRIBUTE](CONTRIBUTE.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details. 
+We welcome contributions and suggestions. Please check [CONTRIBUTE](docs/CONTRIBUTE.md) and [CODE_OF_CONDUCT](docs/CODE_OF_CONDUCT.md) for details. 
+
+
+
+## Citations
+If you find our work useful in your research, please consider citing:
+
+```bibtex
+@inproceedings{lin2021end-to-end,
+author = {Lin, Kevin and Wang, Lijuan and Liu, Zicheng},
+title = {End-to-End Human Pose and Mesh Reconstruction with Transformers},
+booktitle = {CVPR},
+year = {2021},
+}
+```
 
 
 ## Acknowledgments
