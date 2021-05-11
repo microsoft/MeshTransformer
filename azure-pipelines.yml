@@ -24,6 +24,3 @@ steps:
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 
-- script: |
-    python setup.py build develop
-  displayName: 'setup'
