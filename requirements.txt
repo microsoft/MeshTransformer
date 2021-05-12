@@ -1,6 +1,6 @@
 yacs
 cython
-matplotlib
+matplotlib==3.4.1
 opencv-python
 tqdm
 nltk

@@ -1,6 +1,6 @@
 # Training and evaluation 
 
-In our experiments, we conduct single-node distributed training using a machine with 8 V100 GPUs. We provide Pytorch codes for training and testing the proposed METRO.
+In our experiments, we conduct single-node distributed training using a machine with 8 V100 GPUs. 
 
 
 ## 3D hand reconstruction from a single image
@@ -37,7 +37,7 @@ python metro/tools/run_hand_inference.py \
        --model_path models/metro_released/metro_hand_state_dict.bin \
 ```
 
-To reproduce our results, we released our prediction file [ckpt200-sc10_rot0-pred.zip](https://1drv.ms/u/s!AjSbuBGA5p7mbO6hR40LiT7vWuY?e=5Ez4ox). Please submit the file to the Leaderboard, and you should be able to generate the following results. 
+To reproduce our results, we released our prediction file `ckpt200-sc10_rot0-pred.zip` (see `docs/DOWNLOAD.md`). Please submit the file to the Leaderboard, and you should be able to generate the following results. 
 
 ```bash
 Evaluation 3D KP results:
@@ -68,7 +68,7 @@ python metro/tools/run_hand_inference.py \
        --multiscale_inference
 ```
 
-To reproduce our results, we have released our prediction file [ckpt200-multisc-pred.zip](https://1drv.ms/u/s!AjSbuBGA5p7mba52EPdaG5HyadU?e=Db0SYe). You may want to submit it to the Leaderboard, and it should produce the following results. 
+To reproduce our results, we have released our prediction file `ckpt200-multisc-pred.zip` (see `docs/DOWNLOAD.md`). You may want to submit it to the Leaderboard, and it should produce the following results. 
 
 ```bash
 Evaluation 3D KP results:
@@ -113,7 +113,7 @@ python -m torch.distributed.launch --nproc_per_node=8 \
 
 ### Evaluation on Human3.6M
 
-In the following script, we evaluate our model [metro_h36m_state_dict.bin](https://1drv.ms/u/s!AjSbuBGA5p7maYOP-Yr9C8DdwV4?e=ANPczU) on Human3.6M validation set.  
+In the following script, we evaluate our model `metro_h36m_state_dict.bin` on Human3.6M validation set. Check `docs/DOWNLOAD.md` for more details about downloading the model file.
 
 ```bash
 python -m torch.distributed.launch --nproc_per_node=8 \
@@ -186,7 +186,7 @@ python -m torch.distributed.launch --nproc_per_node=8 \
 
 
 ### Evaluation on 3DPW
-In the following script, we evaluate our model [metro_3dpw_state_dict.bin](https://1drv.ms/u/s!AjSbuBGA5p7mauboKr9sxY0rxBY?e=ATlXLS) on 3DPW test set. 
+In the following script, we evaluate our model `metro_3dpw_state_dict.bin` on 3DPW test set. Check `docs/DOWNLOAD.md` for more details about downloading the model file.
 
 
 ```bash
