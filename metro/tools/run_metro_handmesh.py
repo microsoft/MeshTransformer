@@ -36,9 +36,6 @@ from metro.utils.renderer import Renderer, visualize_reconstruction, visualize_r
 from metro.utils.metric_pampjpe import reconstruction_error
 from metro.utils.geometric_layers import orthographic_projection
 
-from azureml.core.run import Run
-aml_run = Run.get_context()
-
 def save_checkpoint(model, args, epoch, iteration, num_trial=10):
     checkpoint_dir = op.join(args.output_dir, 'checkpoint-{}-{}'.format(
         epoch, iteration))
@@ -232,10 +229,6 @@ def run(args, train_dataloader, METRO_model, mano_model, renderer, mesh_sampler)
                     log_losses.avg, log_loss_2djoints.avg, log_loss_3djoints.avg, log_loss_vertices.avg, batch_time.avg, data_time.avg, 
                     optimizer.param_groups[0]['lr'])
             )
-            aml_run.log(name='Loss', value=float(log_losses.avg))
-            aml_run.log(name='3d joint Loss', value=float(log_loss_3djoints.avg))
-            aml_run.log(name='2d joint Loss', value=float(log_loss_2djoints.avg))
-            aml_run.log(name='vertex Loss', value=float(log_loss_vertices.avg))
 
             visual_imgs = visualize_mesh(   renderer,
                                             annotations['ori_img'].detach(),
@@ -249,9 +242,8 @@ def run(args, train_dataloader, METRO_model, mano_model, renderer, mesh_sampler)
 
             if is_main_process()==True:
                 stamp = str(epoch) + '_' + str(iteration)
-                temp_fname = 'visual_'+stamp+'.jpg'
+                temp_fname = args.output_dir + 'visual_' + stamp + '.jpg'
                 cv2.imwrite(temp_fname, np.asarray(visual_imgs[:,:,::-1]*255))
-                aml_run.log_image(name='visual results', path=temp_fname)
 
         if iteration % iters_per_epoch == 0:
             if epoch%10==0:
@@ -331,7 +323,7 @@ def run_aml_inference_hand_mesh(args, val_loader, METRO_model, criterion, criter
 
     azure_ckpt_name = args.resume_checkpoint.split('/')[-2].split('-')[1]
     inference_setting = 'sc%02d_rot%s'%(int(args.sc*10),str(int(args.rot)))
-    output_zip_file = args.output_dir+'ckpt'+ azure_ckpt_name + '-' + inference_setting +'-pred.zip'
+    output_zip_file = args.output_dir + 'ckpt' + azure_ckpt_name + '-' + inference_setting +'-pred.zip'
 
     resolved_submit_cmd = 'zip ' + output_zip_file + ' ' + output_json_file
     print(resolved_submit_cmd)
@@ -389,9 +381,8 @@ def run_inference_hand_mesh(args, val_loader, METRO_model, criterion, criterion_
                 visual_imgs = np.asarray(visual_imgs)
                 
                 inference_setting = 'sc%02d_rot%s'%(int(args.sc*10),str(int(args.rot)))
-                temp_fname = args.resume_checkpoint[0:-9] + 'freihand_results_'+inference_setting+'_batch'+str(i)+'.jpg'
+                temp_fname = args.output_dir + args.resume_checkpoint[0:-9] + 'freihand_results_'+inference_setting+'_batch'+str(i)+'.jpg'
                 cv2.imwrite(temp_fname, np.asarray(visual_imgs[:,:,::-1]*255))
-                aml_run.log_image(name='visual results', path=temp_fname)
 
     print('save results to pred.json')
     with open('pred.json', 'w') as f:

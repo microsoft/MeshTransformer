@@ -35,7 +35,7 @@ dist/
 models
 output
 exps
-scripts
+predictions
 
 # hidden folder for aml configs
 .azureml

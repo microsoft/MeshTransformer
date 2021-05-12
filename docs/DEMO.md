@@ -17,7 +17,7 @@ python ./metro/tools/end2end_inference_bodymesh.py
 ```
 After running, it will generate the results in the folder `./samples/human-body`
 
- <img src="samples/human-body/3dpw_test1_metro_pred.jpg" width="650"> 
+ <img src="../samples/human-body/3dpw_test1_metro_pred.jpg" width="650"> 
 
 ## Hand Reconstruction 
 
@@ -32,7 +32,7 @@ python ./metro/tools/end2end_inference_handmesh.py
 ```
 After running, it will outputs the results in the folder `./samples/hand`
 
- <img src="samples/hand/freihand_sample1_metro_pred.jpg" width="650"> 
+ <img src="../samples/hand/freihand_sample1_metro_pred.jpg" width="650"> 
 
 ## Limitations
 

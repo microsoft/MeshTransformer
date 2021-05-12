@@ -1,8 +1,11 @@
 # MeshTransformer ✨
 
-This is an official PyTroch implementation of [End-to-End Human Pose and Mesh Reconstruction with Transformers](https://arxiv.org/abs/2012.09760). 
+This is our research code of [End-to-End Human Pose and Mesh Reconstruction with Transformers](https://arxiv.org/abs/2012.09760). 
 
-MEsh TRansfOrmer (METRO) is a simple yet effective transformer framework that achieves strong results on human mesh reconstruction and hand mesh reconstruction. In this repository, we provide PyTorch code for training and testing our proposed method. 
+MEsh TRansfOrmer is a simple yet effective transformer-based method for human pose and mesh reconsruction from an input image. In this repository, we provide our research code for training and testing our proposed method for the following tasks:
+
+- Human pose and mesh reconstruction
+- Hand pose and mesh reconstruction
 
  <img src="docs/metro-overview.png" width="650"> 
 
@@ -30,20 +33,9 @@ We provide python codes for training and evaluation.
 
 Check [EXP.md](docs/EXP.md) for details.
 
-
-## License
-
-Our research code is released under the MIT license. See [LICENSE](LICENSE) for details. 
-
-We use submodules from third parties, such as [huggingface/transformers](https://github.com/huggingface/transformers) and [hassony2/manopth](https://github.com/hassony2/manopth). Please see [NOTICE](NOTICE.md) for details. 
-
-We note that any use of SMPL models and MANO models are subject to **Software Copyright License for non-commercial scientific research purposes**. See [SMPL-Model License](https://smpl.is.tue.mpg.de/modellicense) and [MANO License](https://mano.is.tue.mpg.de/license) for details.
-
-
 ## Contributing 
 
 We welcome contributions and suggestions. Please check [CONTRIBUTE](docs/CONTRIBUTE.md) and [CODE_OF_CONDUCT](docs/CODE_OF_CONDUCT.md) for details. 
-
 
 
 ## Citations
@@ -57,6 +49,16 @@ booktitle = {CVPR},
 year = {2021},
 }
 ```
+
+
+## License
+
+Our research code is released under the MIT license. See [LICENSE](LICENSE) for details. 
+
+We use submodules from third parties, such as [huggingface/transformers](https://github.com/huggingface/transformers) and [hassony2/manopth](https://github.com/hassony2/manopth). Please see [NOTICE](NOTICE.md) for details. 
+
+We note that any use of SMPL models and MANO models are subject to **Software Copyright License for non-commercial scientific research purposes**. See [SMPL-Model License](https://smpl.is.tue.mpg.de/modellicense) and [MANO License](https://mano.is.tue.mpg.de/license) for details.
+
 
 
 ## Acknowledgments
@@ -80,3 +82,5 @@ Our implementation and experiments are built on top of open-source GitHub reposi
 [mks0601/I2L-MeshNet_RELEASE](https://github.com/mks0601/I2L-MeshNet_RELEASE) 
 
 [open-mmlab/mmdetection](https://github.com/open-mmlab/mmdetection) 
+
+

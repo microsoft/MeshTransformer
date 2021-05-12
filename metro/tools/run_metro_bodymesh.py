@@ -36,8 +36,6 @@ from metro.utils.renderer import Renderer, visualize_reconstruction, visualize_r
 from metro.utils.metric_pampjpe import reconstruction_error
 from metro.utils.geometric_layers import orthographic_projection
 
-from azureml.core.run import Run
-aml_run = Run.get_context()
 def save_checkpoint(model, args, epoch, iteration, num_trial=10):
     checkpoint_dir = op.join(args.output_dir, 'checkpoint-{}-{}'.format(
         epoch, iteration))
@@ -292,10 +290,6 @@ def run(args, train_dataloader, val_dataloader, METRO_model, smpl, mesh_sampler,
                     log_losses.avg, log_loss_2djoints.avg, log_loss_3djoints.avg, log_loss_vertices.avg, batch_time.avg, data_time.avg, 
                     optimizer.param_groups[0]['lr'])
             )
-            aml_run.log(name='Loss', value=float(log_losses.avg))
-            aml_run.log(name='3d joint Loss', value=float(log_loss_3djoints.avg))
-            aml_run.log(name='2d joint Loss', value=float(log_loss_2djoints.avg))
-            aml_run.log(name='vertex Loss', value=float(log_loss_vertices.avg))
 
             visual_imgs = visualize_mesh(   renderer,
                                             annotations['ori_img'].detach(),
@@ -309,11 +303,9 @@ def run(args, train_dataloader, val_dataloader, METRO_model, smpl, mesh_sampler,
 
             if is_main_process()==True:
                 stamp = str(epoch) + '_' + str(iteration)
-                temp_fname = 'visual_'+stamp+'.jpg'
+                temp_fname = args.output_dir + 'visual_' + stamp + '.jpg'
                 cv2.imwrite(temp_fname, np.asarray(visual_imgs[:,:,::-1]*255))
-                aml_run.log_image(name='visual results', path=temp_fname)
 
-        
         if iteration % iters_per_epoch == 0:
             val_mPVE, val_mPJPE, val_PAmPJPE, val_count = run_validate(args, val_dataloader, 
                                                 METRO_model, 
@@ -323,9 +315,6 @@ def run(args, train_dataloader, val_dataloader, METRO_model, smpl, mesh_sampler,
                                                 smpl,
                                                 mesh_sampler)
 
-            aml_run.log(name='mPVE', value=float(1000*val_mPVE))
-            aml_run.log(name='mPJPE', value=float(1000*val_mPJPE))
-            aml_run.log(name='PAmPJPE', value=float(1000*val_PAmPJPE))
             logger.info(
                 ' '.join(['Validation', 'epoch: {ep}',]).format(ep=epoch) 
                 + '  mPVE: {:6.2f}, mPJPE: {:6.2f}, PAmPJPE: {:6.2f}, Data Count: {:6.2f}'.format(1000*val_mPVE, 1000*val_mPJPE, 1000*val_PAmPJPE, val_count)
@@ -371,9 +360,6 @@ def run_eval_general(args, val_dataloader, METRO_model, smpl, mesh_sampler):
                                     smpl,
                                     mesh_sampler)
 
-    aml_run.log(name='mPVE', value=float(1000*val_mPVE))
-    aml_run.log(name='mPJPE', value=float(1000*val_mPJPE))
-    aml_run.log(name='PAmPJPE', value=float(1000*val_PAmPJPE))
     logger.info(
         ' '.join(['Validation', 'epoch: {ep}',]).format(ep=epoch) 
         + '  mPVE: {:6.2f}, mPJPE: {:6.2f}, PAmPJPE: {:6.2f} '.format(1000*val_mPVE, 1000*val_mPJPE, 1000*val_PAmPJPE)

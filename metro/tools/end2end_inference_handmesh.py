@@ -46,7 +46,6 @@ transform_visualize = transforms.Compose([
                     transforms.CenterCrop(224),
                     transforms.ToTensor()])
 
-from azureml.core.run import Run
 def run_inference(args, image_list, _metro_network, mano, renderer, mesh_sampler):
     # switch to evaluate mode
     _metro_network.eval()

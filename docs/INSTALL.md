@@ -1,7 +1,6 @@
 ## Installation
 
-We support Linux with NVIDIA GPUs. Our codebase is developed based on Ubuntu 16.04 and NVIDIA GPU cards. We conduct distributed training using a machine with 8 V100 GPUs.
-
+Our codebase is developed based on Ubuntu 16.04 and NVIDIA GPU cards. 
 
 ### Requirements
 - Python 3.7
@@ -49,8 +48,4 @@ pip install ./manopth/.
 unset INSTALL_DIR
 ```
 
-
-
-### Next step
-Please visit [DOWNLOAD.md](docs/DOWNLOAD.md) for downloading important files and data. 
 
