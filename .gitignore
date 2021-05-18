@@ -5,6 +5,7 @@ _ext
 *.so
 build/
 dist/
+*.egg-info/
 
 # pytorch/python formats
 *.pth
