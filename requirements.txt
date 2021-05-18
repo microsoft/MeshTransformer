@@ -6,7 +6,7 @@ nltk
 numpy
 matplotlib>=3.0.3
 scipy==1.4.1
-pillow==6.2.0
+pillow==8.1.1
 chumpy
 boto3
 requests
