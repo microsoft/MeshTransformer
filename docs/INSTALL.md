@@ -29,7 +29,7 @@ cd apex
 python setup.py install --cuda_ext --cpp_ext
 
 # Install OpenDR
-pip install opendr
+pip install opendr matplotlib
 
 # Install METRO
 cd $INSTALL_DIR

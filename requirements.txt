@@ -4,7 +4,6 @@ opencv-python
 tqdm
 nltk
 numpy
-matplotlib>=3.0.3
 scipy==1.4.1
 chumpy
 boto3
