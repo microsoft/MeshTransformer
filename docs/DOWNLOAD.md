@@ -81,9 +81,10 @@
     To download the annotation files, please use the following command.
     ```bash
     cd $REPO_DIR
-    path/to/azcopy copy 'https://datarelease.blob.core.windows.net/metro/datasets/datasets_release/DATA_NAME' <target folder> --recursive  
+    path/to/azcopy copy 'https://datarelease.blob.core.windows.net/metro/datasets/filename.tar' /path/to/your/folder/filename.tar
+    tar xvf filename.tar  
     ```
-    `DATA_NAME` could be `Tax-H36m-coco40k-Muco-UP-Mpii`, `human3.6m`, `coco_smpl`, `muco`, `up3d`, `mpii`, `3dpw`, `freihand`. Total file size is about 200 GB. 
+    `filename.tar` could be `Tax-H36m-coco40k-Muco-UP-Mpii.tar`, `human3.6m.tar`, `coco_smpl.tar`, `muco.tar`, `up3d.tar`, `mpii.tar`, `3dpw.tar`, `freihand.tar`. Total file size is about 200 GB. 
 
     The datasets and pseudo ground truth labels are provided by [Pose2Mesh](https://github.com/hongsukchoi/Pose2Mesh_RELEASE). We only reorganize the data format to better fit our training pipeline. We suggest to download the orignal image files from the offical dataset websites.
 

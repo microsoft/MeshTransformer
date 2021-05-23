@@ -33,8 +33,8 @@ pip install opendr matplotlib
 
 # Install METRO
 cd $INSTALL_DIR
-git clone --recursive git@github.com:microsoft/METRO.git
-cd METRO
+git clone --recursive https://github.com/microsoft/MeshTransformer.git
+cd MeshTransformer
 python setup.py build develop
 
 # Install requirements
@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 # Install manopth
 cd $INSTALL_DIR
-cd METRO
+cd MeshTransformer
 pip install ./manopth/.
 
 unset INSTALL_DIR

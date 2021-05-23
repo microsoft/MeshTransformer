@@ -26,6 +26,8 @@ python -m torch.distributed.launch --nproc_per_node=8 \
        --hidden_feat_dim 1024,256,64 
 ```
 
+Example training log can be found here [freihand_reproduce_log.txt]('https://datarelease.blob.core.windows.net/metro/models/freihand_reproduce_log.txt')
+
 ### Testing
 
 After training, we use the final checkpoint (trained at 200 epoch) for testing.
@@ -110,6 +112,7 @@ python -m torch.distributed.launch --nproc_per_node=8 \
        --hidden_feat_dim 1024,256,128 
 ```
 
+Example training log can be found here [h36m_reproduce_log.txt]('https://datarelease.blob.core.windows.net/metro/models/h36m_reproduce_log.txt')
 
 ### Evaluation on Human3.6M
 
