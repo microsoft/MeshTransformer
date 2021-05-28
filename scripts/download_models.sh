@@ -17,9 +17,9 @@ fi
 # (1) METRO for human mesh reconstruction (trained on H3.6M + COCO + MuCO + UP3D + MPII)
 wget -nc $BLOB/models/metro_h36m_state_dict.bin -O $REPO_DIR/models/metro_release/metro_h36m_state_dict.bin
 # (2) METRO for human mesh reconstruction (trained on H3.6M + COCO + MuCO + UP3D + MPII, then fine-tuned on 3DPW)
-wget -nc $BLOB/models/metro_h36m_state_dict.bin -O $REPO_DIR/models/metro_release/metro_3dpw_state_dict.bin
+wget -nc $BLOB/models/metro_3dpw_state_dict.bin -O $REPO_DIR/models/metro_release/metro_3dpw_state_dict.bin
 # (3) METRO for hand mesh reconstruction (trained on FreiHAND)
-wget -nc $BLOB/models/metro_h36m_state_dict.bin -O $REPO_DIR/models/metro_release/metro_hand_state_dict.bin
+wget -nc $BLOB/models/metro_hand_state_dict.bin -O $REPO_DIR/models/metro_release/metro_hand_state_dict.bin
 
 
 # --------------------------------
