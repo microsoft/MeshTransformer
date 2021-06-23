@@ -204,7 +204,7 @@ python -m torch.distributed.launch --nproc_per_node=8 \
           --input_feat_dim 2051,512,128 \
           --hidden_feat_dim 1024,256,128 \
           --run_eval_only \
-          --resume_checkpoint ./models/metro_released/metro_3dpw_state_dict.bin 
+          --resume_checkpoint ./models/metro_release/metro_3dpw_state_dict.bin 
 ```
 
 After evaluation, it should reproduce the results below
