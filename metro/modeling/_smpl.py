@@ -132,7 +132,7 @@ class SMPL(nn.Module):
         Input:
             vertices: size = (B, 6890, 3)
         Output:
-            3D joints: size = (B, 24, 3)
+            3D joints: size = (B, 17, 3)
         """
         joints = torch.einsum('bik,ji->bjk', [vertices, self.J_regressor_h36m_correct])
         return joints
