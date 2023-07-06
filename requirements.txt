@@ -4,7 +4,7 @@ opencv-python
 tqdm
 nltk
 numpy
-scipy==1.4.1
+scipy==1.10.0
 chumpy
 boto3
 requests
